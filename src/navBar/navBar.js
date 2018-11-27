@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
+
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -18,6 +20,12 @@ class NavBar extends Component {
           <div className="box">JOIN</div>
         </div>
         <div className="box help">HELP</div>
+        <Route path="how-it-work" />
+        <Route path="find-shipments" />
+        <Route path="ship" />
+        <Route path="sign-in" />
+        <Route path="join" />
+        <Route path="help" />
       </div>
     );
   }

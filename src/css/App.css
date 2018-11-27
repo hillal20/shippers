@@ -36,6 +36,10 @@
   width: 100px;
   border-right: 2px solid black;
 }
+.App .navBar .logo:hover {
+  border-bottom: 3px solid darkorange;
+  color: white;
+}
 .App .navBar .box {
   display: flex;
   text-align: center;
