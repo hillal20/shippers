@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, withRouter } from "react-router-dom";
+import HowItWoks from "./elements/howItWorks.js";
 
 class NavBar extends Component {
   constructor(props) {
@@ -10,24 +11,42 @@ class NavBar extends Component {
     return (
       <div className="navBar">
         <div className="logo">SHIPPERS</div>
+
         <div className="shippers" className="box">
-          HOW IT WORKS
+          <span
+            onClick={() => {
+              this.props.history.push("/how-it-work");
+            }}
+          >
+            HOW IT WORKS
+          </span>
         </div>
-        <div className="box"> FIND SHIPMENTS </div>
-        <div className="box">SHIP</div>
+        <div className="box">
+          <spn
+            onClick={() => {
+              this.props.history.push("/find-shipments");
+            }}
+          >
+            {" "}
+            FIND SHIPMENTS
+          </spn>
+        </div>
+        <div className="box">
+          <span>SHIP</span>
+        </div>
         <div className="sign-join">
-          <div className="box">SIGN IN </div>
-          <div className="box">JOIN</div>
+          <div className="box">
+            <span>SIGN IN</span>
+          </div>
+          <div className="box">
+            <span>>JOIN</span>
+          </div>
         </div>
-        <div className="box help">HELP</div>
-        <Route path="how-it-work" />
-        <Route path="find-shipments" />
-        <Route path="ship" />
-        <Route path="sign-in" />
-        <Route path="join" />
-        <Route path="help" />
+        <div className="box help">
+          <span>HELP</span>
+        </div>
       </div>
     );
   }
 }
-export default NavBar;
+export default withRouter(NavBar);
