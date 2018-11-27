@@ -27,23 +27,46 @@ class NavBar extends Component {
               this.props.history.push("/find-shipments");
             }}
           >
-            {" "}
             FIND SHIPMENTS
           </spn>
         </div>
         <div className="box">
-          <span>SHIP</span>
+          <span
+            onClick={() => {
+              this.props.history.push("/ship");
+            }}
+          >
+            SHIP
+          </span>
         </div>
         <div className="sign-join">
           <div className="box">
-            <span>SIGN IN</span>
+            <span
+              onClick={() => {
+                this.props.history.push("/sign-in");
+              }}
+            >
+              SIGN IN
+            </span>
           </div>
           <div className="box">
-            <span>>JOIN</span>
+            <span
+              onClick={() => {
+                this.props.history.push("/join");
+              }}
+            >
+              JOIN
+            </span>
           </div>
         </div>
         <div className="box help">
-          <span>HELP</span>
+          <span
+            onClick={() => {
+              this.props.history.push("/help");
+            }}
+          >
+            HELP
+          </span>
         </div>
       </div>
     );
