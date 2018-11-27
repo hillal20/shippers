@@ -3,4 +3,75 @@
 
 .App {
   text-align: center;
+  .box1 {
+    //border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    color: red;
+    position: absolute;
+    padding: 15px;
+    top: 0px;
+    left: 0px;
+    background: lightsalmon;
+    align-items: space-around;
+
+    .box2 {
+      border-top: 1px solid black;
+      margin-top: 5px;
+    }
+    .box3 {
+      border-top: 1px solid black;
+      margin-top: 30px;
+    }
+  }
+  .navBar {
+    box-shadow: 3px 7px lavender;
+    font-style: italic;
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+    background: lightpink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .logo {
+      font-weight: bold;
+
+      width: 100px;
+      border-right: 2px solid black;
+    }
+    .shippers {
+    }
+    .box {
+      &:hover {
+        border-bottom: 3px solid darkorange;
+        font-weight: bold;
+      }
+      display: flex;
+      text-align: center;
+      padding: 10px;
+      //border-left: 2px solid black;
+    }
+    .help {
+      border-left: 2px solid black;
+      width: 50px;
+    }
+    .sign-join {
+      display: flex;
+      margin-left: 80px;
+      margin-right: 0px;
+      padding-right: 0px;
+    }
+  }
+  .sideBar {
+    border: 2px solid green;
+    width: 300px;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    margin-left: -400px;
+    //display: none;
+    height: 100vh;
+    color: green;
+  }
 }
