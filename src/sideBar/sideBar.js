@@ -15,7 +15,6 @@ class SideBar extends Component {
       <div className="sideBar">
         <h1> side bar</h1>
         <div className="close" onClick={this.close}>
-          {" "}
           <h2>close...</h2>
         </div>
       </div>

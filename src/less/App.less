@@ -3,27 +3,7 @@
 
 .App {
   text-align: center;
-  .box1 {
-    //border: 1px solid black;
-    width: 40px;
-    height: 40px;
-    color: red;
-    position: absolute;
-    padding: 15px;
-    top: 0px;
-    left: 0px;
-    background: lightsalmon;
-    align-items: space-around;
 
-    .box2 {
-      border-top: 1px solid black;
-      margin-top: 5px;
-    }
-    .box3 {
-      border-top: 1px solid black;
-      margin-top: 30px;
-    }
-  }
   .navBar {
     box-shadow: 3px 7px lavender;
     font-style: italic;
@@ -35,16 +15,50 @@
     flex-direction: row;
     justify-content: space-between;
     .logo {
-      &:hover {
+      padding: 0;
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+      font-weight: bold;
+      border-right: 2px solid black;
+      padding-right: 10px;
+      height: 55;
+      span {
+        font-weight: bold;
+      }
+      span:hover {
         border-bottom: 3px solid darkorange;
         color: white;
+        font-size: 20px;
       }
-      font-weight: bold;
-      width: 100px;
-      border-right: 2px solid black;
+
+      .box1 {
+        width: 40px;
+        height: 47px;
+        margin-right: 20px;
+        &:hover {
+          width: 45px;
+        }
+        align-items: space-around;
+
+        .box2 {
+          &:hover {
+            border-top: 3px solid black;
+          }
+          border-top: 1px solid black;
+          margin-top: 12px;
+          padding-top: 25px;
+        } // box2
+        .box3 {
+          &:hover {
+            border-top: 3px solid black;
+          }
+          border-top: 1px solid black;
+        } //box3
+      } // box1
     }
     .shippers {
-    }
+    } //shippers
     .box {
       &:hover {
         border-bottom: 3px solid darkorange;
@@ -54,7 +68,7 @@
       text-align: center;
       padding: 10px;
       //border-left: 2px solid black;
-    }
+    } // box
     .help {
       border-left: 2px solid black;
       width: 50px;

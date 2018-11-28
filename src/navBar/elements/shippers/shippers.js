@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-class Register extends Component {
+class Shippers extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return <div className="sideBar">/></div>;
+    return <div className="shippers">shippers </div>;
   }
 }
-export default Register;
+export default Shippers;

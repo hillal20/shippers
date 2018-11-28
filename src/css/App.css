@@ -1,25 +1,6 @@
 .App {
   text-align: center;
 }
-.App .box1 {
-  width: 40px;
-  height: 40px;
-  color: red;
-  position: absolute;
-  padding: 15px;
-  top: 0px;
-  left: 0px;
-  background: lightsalmon;
-  align-items: space-around;
-}
-.App .box1 .box2 {
-  border-top: 1px solid black;
-  margin-top: 5px;
-}
-.App .box1 .box3 {
-  border-top: 1px solid black;
-  margin-top: 30px;
-}
 .App .navBar {
   box-shadow: 3px 7px lavender;
   font-style: italic;
@@ -32,13 +13,45 @@
   justify-content: space-between;
 }
 .App .navBar .logo {
+  padding: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
   font-weight: bold;
-  width: 100px;
   border-right: 2px solid black;
+  padding-right: 10px;
+  height: 55;
 }
-.App .navBar .logo:hover {
+.App .navBar .logo span {
+  font-weight: bold;
+}
+.App .navBar .logo span:hover {
   border-bottom: 3px solid darkorange;
   color: white;
+  font-size: 20px;
+}
+.App .navBar .logo .box1 {
+  width: 40px;
+  height: 47px;
+  margin-right: 20px;
+  align-items: space-around;
+}
+.App .navBar .logo .box1:hover {
+  width: 45px;
+}
+.App .navBar .logo .box1 .box2 {
+  border-top: 1px solid black;
+  margin-top: 12px;
+  padding-top: 25px;
+}
+.App .navBar .logo .box1 .box2:hover {
+  border-top: 3px solid black;
+}
+.App .navBar .logo .box1 .box3 {
+  border-top: 1px solid black;
+}
+.App .navBar .logo .box1 .box3:hover {
+  border-top: 3px solid black;
 }
 .App .navBar .box {
   display: flex;
