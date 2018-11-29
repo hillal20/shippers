@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link, withRouter } from "react-router-dom";
 import SideBar from "../sideBar/sideBar.js";
+import { connect } from "react-redux";
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +22,7 @@ class NavBar extends Component {
           <div className="box1" onClick={this.display}>
             <div className="box2" />
             <div className="box3" />
+            <div className="box4" />
           </div>
           <span
             onClick={() => {
@@ -41,13 +43,13 @@ class NavBar extends Component {
           </span>
         </div>
         <div className="box">
-          <spn
+          <span
             onClick={() => {
               this.props.history.push("/find-shipments");
             }}
           >
             FIND SHIPMENTS
-          </spn>
+          </span>
         </div>
         <div className="box">
           <span
@@ -91,4 +93,8 @@ class NavBar extends Component {
     );
   }
 }
-export default withRouter(NavBar);
+const mPTS = state => {
+  console.log("state", state);
+  return {};
+};
+export default connect()(withRouter(NavBar));

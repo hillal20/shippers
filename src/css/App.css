@@ -40,18 +40,17 @@
   width: 45px;
 }
 .App .navBar .logo .box1 .box2 {
-  border-top: 1px solid black;
-  margin-top: 12px;
-  padding-top: 25px;
-}
-.App .navBar .logo .box1 .box2:hover {
-  border-top: 3px solid black;
+  border-top: 2px solid black;
+  margin-top: 7px;
+  padding-top: 12px;
 }
 .App .navBar .logo .box1 .box3 {
-  border-top: 1px solid black;
+  border-top: 2px solid black;
 }
-.App .navBar .logo .box1 .box3:hover {
-  border-top: 3px solid black;
+.App .navBar .logo .box1 .box4 {
+  border-top: 2px solid black;
+  margin-top: 12px;
+  padding-top: 25px;
 }
 .App .navBar .box {
   display: flex;

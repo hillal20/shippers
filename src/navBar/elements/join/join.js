@@ -20,7 +20,7 @@ class Join extends Component {
       <div>
         <NavBar />
 
-        <div className="join">
+        {/* <div className="join">
           <input
             type="text"
             placeholder="Enter your First Name"
@@ -64,7 +64,7 @@ class Join extends Component {
             value={this.state.email}
             onChange={this.submitInfo}
           />
-        </div>
+        </div> */}
       </div>
     );
   }
