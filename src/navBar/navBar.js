@@ -5,7 +5,14 @@ import { connect } from "react-redux";
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      ship: true,
+      join: true,
+      howItWorks: true,
+      findShipments: true,
+      join: true,
+      signIn: true
+    };
   }
 
   display = event => {
@@ -34,64 +41,93 @@ class NavBar extends Component {
             onClick={() => {
               this.props.history.push("/shippers");
               this.props.shippersClick();
+              this.setState({
+                ship: this.state.ship,
+                join: this.state.join,
+                howItWorks: this.state.howItWorks,
+                findShipments: this.state.findShipments,
+                join: this.state.join,
+                signIn: this.state.signIn
+              });
             }}
           >
             SHIPPERS
           </span>
         </div>
+        {this.state.howItWorks && (
+          <div className="shippers" className="box">
+            <span
+              onClick={() => {
+                this.props.history.push("/how-it-work");
+                this.props.howItWorksClick();
+              }}
+            >
+              HOW IT WORKS
+            </span>
+          </div>
+        )}
 
-        <div className="shippers" className="box">
-          <span
-            onClick={() => {
-              this.props.history.push("/how-it-work");
-              this.props.howItWorksClick();
-            }}
-          >
-            HOW IT WORKS
-          </span>
-        </div>
-        <div className="box">
-          <span
-            onClick={() => {
-              this.props.history.push("/find-shipments");
-              this.props.findShipmentsClick();
-            }}
-          >
-            FIND SHIPMENTS
-          </span>
-        </div>
-        <div className="box">
-          <span
-            onClick={() => {
-              this.props.history.push("/ship");
-              this.props.shipClick();
-            }}
-          >
-            SHIP
-          </span>
-        </div>
+        {this.state.findShipments && (
+          <div className="box">
+            <span
+              onClick={() => {
+                this.props.history.push("/find-shipments");
+                this.props.findShipmentsClick();
+              }}
+            >
+              FIND SHIPMENTS
+            </span>
+          </div>
+        )}
+
+        {this.state.ship && (
+          <div className="box">
+            <span
+              onClick={() => {
+                this.props.history.push("/ship");
+                this.props.shipClick();
+                this.setState({
+                  ship: !this.state.ship,
+                  join: !this.state.join,
+                  howItWorks: !this.state.howItWorks,
+                  findShipments: !this.state.findShipments,
+                  join: !this.state.join,
+                  signIn: !this.state.signIn
+                });
+              }}
+            >
+              SHIP
+            </span>
+          </div>
+        )}
+
         <div className="sign-join">
-          <div className="box">
-            <span
-              onClick={() => {
-                this.props.history.push("/sign-in");
-                this.props.signInClick();
-              }}
-            >
-              SIGN IN
-            </span>
-          </div>
-          <div className="box">
-            <span
-              onClick={() => {
-                this.props.history.push("/join");
-                this.props.joinClick();
-              }}
-            >
-              JOIN
-            </span>
-          </div>
+          {this.state.signIn && (
+            <div className="box">
+              <span
+                onClick={() => {
+                  this.props.history.push("/sign-in");
+                  this.props.signInClick();
+                }}
+              >
+                SIGN IN
+              </span>
+            </div>
+          )}
+          {this.state.join && (
+            <div className="box">
+              <span
+                onClick={() => {
+                  this.props.history.push("/join");
+                  this.props.joinClick();
+                }}
+              >
+                JOIN
+              </span>
+            </div>
+          )}
         </div>
+
         <div className="box help">
           <span
             onClick={() => {

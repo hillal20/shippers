@@ -15,7 +15,6 @@ class LandingPage extends Component {
     return (
       <div className="landingPage">
         <h1> Welcome to Shippers App </h1>
-        <NavBar />
       </div>
     );
   }

@@ -11,12 +11,13 @@ import SignIn from "./navBar/elements/signIn/signIn.js";
 import FindShipments from "./navBar/elements/findShipments/findShipments.js";
 import Shippers from "./navBar/elements/shippers/shippers.js";
 import Ship from "./navBar/elements/ship/ship.js";
-
+import Navbar from "./navBar/navBar.js";
 import LandingPage from "./landingPage/landingPage.js";
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/how-it-work" component={HowItWoks} />
         <Route exact path="/find-shipments" component={FindShipments} />

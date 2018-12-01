@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Navbar from "../../navBar.js";
+
 class Ship extends Component {
   constructor(props) {
     super(props);
@@ -6,7 +8,12 @@ class Ship extends Component {
   }
 
   render() {
-    return <div className="ship">ship</div>;
+    return (
+      <div className="ship">
+        {/* <Navbar /> */}
+        ship
+      </div>
+    );
   }
 }
 export default Ship;

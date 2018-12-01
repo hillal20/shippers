@@ -18,7 +18,7 @@ class Join extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {/* <NavBar /> */}
 
         {/* <div className="join">
           <input
