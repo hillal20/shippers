@@ -19,7 +19,13 @@ class NavBar extends Component {
       <div className="navBar">
         <div className="logo">
           <SideBar />
-          <div className="box1" onClick={this.display}>
+          <div
+            className="box1"
+            onClick={() => {
+              this.display();
+              this.props.sidebarDisplayClick();
+            }}
+          >
             <div className="box2" />
             <div className="box3" />
             <div className="box4" />
@@ -27,6 +33,7 @@ class NavBar extends Component {
           <span
             onClick={() => {
               this.props.history.push("/shippers");
+              this.props.shippersClick();
             }}
           >
             SHIPPERS
@@ -122,6 +129,12 @@ const mDTP = dispatch => {
     },
     helpClick: () => {
       dispatch({ type: "help-click" });
+    },
+    shippersClick: () => {
+      dispatch({ type: "shippers-click" });
+    },
+    sidebarDisplayClick: () => {
+      dispatch({ type: "sidebar--display-click" });
     }
   };
 };
