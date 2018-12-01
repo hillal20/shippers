@@ -37,6 +37,7 @@ class NavBar extends Component {
           <span
             onClick={() => {
               this.props.history.push("/how-it-work");
+              this.props.howItWorksClick();
             }}
           >
             HOW IT WORKS
@@ -46,6 +47,7 @@ class NavBar extends Component {
           <span
             onClick={() => {
               this.props.history.push("/find-shipments");
+              this.props.findShipmentsClick();
             }}
           >
             FIND SHIPMENTS
@@ -55,6 +57,7 @@ class NavBar extends Component {
           <span
             onClick={() => {
               this.props.history.push("/ship");
+              this.props.shipClick();
             }}
           >
             SHIP
@@ -65,6 +68,7 @@ class NavBar extends Component {
             <span
               onClick={() => {
                 this.props.history.push("/sign-in");
+                this.props.signInClick();
               }}
             >
               SIGN IN
@@ -74,6 +78,7 @@ class NavBar extends Component {
             <span
               onClick={() => {
                 this.props.history.push("/join");
+                this.props.joinClick();
               }}
             >
               JOIN
@@ -84,6 +89,7 @@ class NavBar extends Component {
           <span
             onClick={() => {
               this.props.history.push("/help");
+              this.props.helpClick();
             }}
           >
             HELP
@@ -94,7 +100,33 @@ class NavBar extends Component {
   }
 }
 const mPTS = state => {
-  console.log("state", state);
+  console.log("state ===>", state);
   return {};
 };
-export default connect()(withRouter(NavBar));
+const mDTP = dispatch => {
+  return {
+    joinClick: () => {
+      dispatch({ type: "join-click" });
+    },
+    signInClick: () => {
+      dispatch({ type: "signIn-click" });
+    },
+    shipClick: () => {
+      dispatch({ type: "ship-click" });
+    },
+    findShipmentsClick: () => {
+      dispatch({ type: "find-shipment-click" });
+    },
+    howItWorksClick: () => {
+      dispatch({ type: "how-itWorks-click" });
+    },
+    helpClick: () => {
+      dispatch({ type: "help-click" });
+    }
+  };
+};
+
+export default connect(
+  mPTS,
+  mDTP
+)(withRouter(NavBar));
