@@ -18,7 +18,9 @@ class Join extends Component {
   render() {
     return (
       <div className="join">
-        <div className="join-box1">soososos</div>
+        <div className="join-box1">
+          <h2>Join Shippers</h2>
+        </div>
         <div className="join-box2">bsbsbbbbbssb</div>
 
         {/* <div className="join">
