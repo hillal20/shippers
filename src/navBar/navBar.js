@@ -14,7 +14,29 @@ class NavBar extends Component {
       signIn: true
     };
   }
-
+  componentWillMount() {
+    this.updateNavBar();
+  }
+  updateNavBar = () => {
+    this.setState({
+      ship: !this.state.ship,
+      join: !this.state.join,
+      howItWorks: !this.state.howItWorks,
+      findShipments: !this.state.findShipments,
+      join: !this.state.join,
+      signIn: !this.state.signIn
+    });
+  };
+  clearNavBar = () => {
+    this.setState({
+      ship: !this.state.ship,
+      join: !this.state.join,
+      howItWorks: !this.state.howItWorks,
+      findShipments: !this.state.findShipments,
+      join: !this.state.join,
+      signIn: !this.state.signIn
+    });
+  };
   display = event => {
     const sidebar = document.querySelector(".sideBar");
     sidebar.style.marginLeft = "0px";
@@ -22,6 +44,7 @@ class NavBar extends Component {
     sidebar.style.top = "70px";
   };
   render() {
+    console.log("st===>", this.state);
     return (
       <div className="navBar">
         <div className="logo">
@@ -37,18 +60,12 @@ class NavBar extends Component {
             <div className="box3" />
             <div className="box4" />
           </div>
+
           <span
             onClick={() => {
-              this.props.history.push("/shippers");
+              this.updateNavBar();
+              this.props.history.push("/");
               this.props.shippersClick();
-              this.setState({
-                ship: this.state.ship,
-                join: this.state.join,
-                howItWorks: this.state.howItWorks,
-                findShipments: this.state.findShipments,
-                join: this.state.join,
-                signIn: this.state.signIn
-              });
             }}
           >
             SHIPPERS
@@ -58,6 +75,7 @@ class NavBar extends Component {
           <div className="shippers" className="box">
             <span
               onClick={() => {
+                this.updateNavBar();
                 this.props.history.push("/how-it-work");
                 this.props.howItWorksClick();
               }}
@@ -71,6 +89,7 @@ class NavBar extends Component {
           <div className="box">
             <span
               onClick={() => {
+                // this.clearNavBar();
                 this.props.history.push("/find-shipments");
                 this.props.findShipmentsClick();
               }}
@@ -85,15 +104,8 @@ class NavBar extends Component {
             <span
               onClick={() => {
                 this.props.history.push("/ship");
+                this.clearNavBar();
                 this.props.shipClick();
-                this.setState({
-                  ship: !this.state.ship,
-                  join: !this.state.join,
-                  howItWorks: !this.state.howItWorks,
-                  findShipments: !this.state.findShipments,
-                  join: !this.state.join,
-                  signIn: !this.state.signIn
-                });
               }}
             >
               SHIP
@@ -118,6 +130,7 @@ class NavBar extends Component {
             <div className="box">
               <span
                 onClick={() => {
+                  this.clearNavBar();
                   this.props.history.push("/join");
                   this.props.joinClick();
                 }}

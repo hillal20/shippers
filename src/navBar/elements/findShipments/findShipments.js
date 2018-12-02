@@ -9,7 +9,7 @@ class FindShipments extends Component {
   render() {
     return (
       <div className="findShipments">
-        <NavBar />
+        {/* <NavBar /> */}
         FindShipments
       </div>
     );
