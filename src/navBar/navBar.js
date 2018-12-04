@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Route, Link, withRouter } from "react-router-dom";
 import SideBar from "../sideBar/sideBar.js";
 import { connect } from "react-redux";
+export const HOW_IT_WORKS = "how-itWorks-click";
+
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +17,7 @@ class NavBar extends Component {
     };
   }
   componentWillMount() {
-    this.updateNavBar();
+    //this.clearNavBar();
   }
   updateNavBar = () => {
     this.setState({
@@ -43,8 +45,16 @@ class NavBar extends Component {
     sidebar.style.background = "red";
     sidebar.style.top = "70px";
   };
+  findNavBar = () => {
+    // let navBar = document.querySelector(".navBar");
+    // if (this.props.location.pathname === "/how-it-work") {
+    //   navBar.style.display = "none";
+    // }
+    // navBar.style.display = "flex";
+  };
+
   render() {
-    console.log("st===>", this.state);
+    console.log("path ===>", this.props.location.pathname);
     return (
       <div className="navBar">
         <div className="logo">
@@ -63,9 +73,13 @@ class NavBar extends Component {
 
           <span
             onClick={() => {
-              this.updateNavBar();
-              this.props.history.push("/");
-              this.props.shippersClick();
+              if (this.props.location.pathname === "/") {
+                return false;
+              } else {
+                this.updateNavBar();
+                this.props.history.push("/");
+                this.props.shippersClick();
+              }
             }}
           >
             SHIPPERS
@@ -77,6 +91,7 @@ class NavBar extends Component {
               onClick={() => {
                 this.updateNavBar();
                 this.props.history.push("/how-it-work");
+                this.findNavBar();
                 this.props.howItWorksClick();
               }}
             >
@@ -89,7 +104,7 @@ class NavBar extends Component {
           <div className="box">
             <span
               onClick={() => {
-                // this.clearNavBar();
+                this.clearNavBar();
                 this.props.history.push("/find-shipments");
                 this.props.findShipmentsClick();
               }}
@@ -157,7 +172,10 @@ class NavBar extends Component {
 }
 const mPTS = state => {
   console.log("state ===>", state);
-  return {};
+  const st = state.HowItWorksReducer || [];
+  return {
+    st: st
+  };
 };
 const mDTP = dispatch => {
   return {

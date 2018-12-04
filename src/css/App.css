@@ -100,3 +100,10 @@
   height: 400px;
   border: 2px solid red;
 }
+.howItWorks {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid blue;
+  align-content: center;
+  background: antiquewhite;
+}
