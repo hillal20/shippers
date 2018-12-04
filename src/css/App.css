@@ -103,7 +103,11 @@
 .howItWorks {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   border: 1px solid blue;
   align-content: center;
   background: antiquewhite;
+}
+.howItWorks .howItWorks-text {
+  width: 60%;
 }
