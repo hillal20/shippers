@@ -3,14 +3,31 @@ import NavBar from "../../navBar.js";
 class FindShipments extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      pickupAdd: "",
+      deliveryAdd: ""
+    };
   }
+
+  addressInfo = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
   render() {
     return (
       <div className="findShipments">
         <div className="box-5">
-          <h1>bx1</h1>
+          <p>PICKUP</p>
+          <input
+            placeholder="Anywhere"
+            name="pickupAdd"
+            value={this.state.pickupAdd}
+            onChange={this.addressInfo}
+          />
+          <p>DELIVERY</p>
+          <input />
         </div>
         <div className="box-6">
           {" "}
