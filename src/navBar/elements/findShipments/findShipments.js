@@ -27,7 +27,34 @@ class FindShipments extends Component {
             onChange={this.addressInfo}
           />
           <p>DELIVERY</p>
-          <input />
+          <input
+            placeholder="Anywhere"
+            name="deliveryAdd"
+            value={this.state.deliveryAdd}
+            onChange={this.addressInfo}
+          />
+          <div className="categories">
+            <div>
+              <p1>Categories</p1>
+              <p>All Categories</p>
+            </div>
+            <div>
+              <p2>weights</p2>
+              <p>All Weights</p>
+            </div>
+            <div>
+              <p3>Pricing type</p3>
+              <p>listing and offer</p>
+            </div>
+            <div>
+              <p3>location type</p3>
+              <p>all locations</p>
+            </div>
+            <div>
+              <p4>listed by</p4>
+              <p>listed by</p>
+            </div>
+          </div>
         </div>
         <div className="box-6">
           {" "}

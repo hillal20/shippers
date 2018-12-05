@@ -158,9 +158,23 @@
   background: lightblue;
 }
 .findShipments .box-5 {
-  border-right: 3px solid darkblue;
+  box-shadow: 3px 7px lavender;
   width: 30%;
   height: 100vh;
+}
+.findShipments .box-5 input {
+  width: 200px;
+  height: 50px;
+  border: 2px solid darkcyan;
+}
+.findShipments .box-5 .categories {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: shrink;
+  margin-top: 10px;
+  border-top: 2px solid darkgray;
+  background: lightgreen;
+  height: 65%;
 }
 .findShipments .box-6 {
   width: 70%;
