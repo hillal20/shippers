@@ -9,8 +9,13 @@ class FindShipments extends Component {
   render() {
     return (
       <div className="findShipments">
-        {/* <NavBar /> */}
-        FindShipments
+        <div className="box-5">
+          <h1>bx1</h1>
+        </div>
+        <div className="box-6">
+          {" "}
+          <h1>bx2</h1>
+        </div>
       </div>
     );
   }

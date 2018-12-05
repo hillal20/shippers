@@ -5,12 +5,15 @@
   text-align: center;
 
   .navBar {
+    position: sticky;
+    top: 0;
+
     box-shadow: 3px 7px lavender;
     font-style: italic;
     text-align: center;
     height: 50px;
     padding: 10px;
-    background: lightpink;
+    background: lightgoldenrodyellow;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,8 +30,8 @@
         font-weight: bold;
       }
       span:hover {
-        border-bottom: 3px solid darkorange;
-        color: white;
+        border-bottom: 3px solid lightskyblue;
+        color: lightseagreen;
         font-size: 20px;
       }
 
@@ -61,7 +64,7 @@
     } //shippers
     .box {
       &:hover {
-        border-bottom: 3px solid darkorange;
+        border-bottom: 3px solid lightskyblue;
         font-weight: bold;
       }
       display: flex;
@@ -114,13 +117,72 @@
 } // join
 
 .howItWorks {
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 1px solid blue;
+  //border: 1px solid blue;
   align-content: center;
-  background: antiquewhite;
+  background: linen;
   .howItWorks-text {
-    width: 60%;
+    width: 50%;
+    height: 100vh;
+    background: darkgoldenrod;
+    .text-h1 {
+      text-align: center;
+      height: 30vh;
+    }
+  }
+
+  .btn {
+    .btn-1 {
+      &:hover {
+        background: darkcyan;
+      }
+      width: 200px;
+      height: 50px;
+      background: lightskyblue;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .btn-2 {
+      &:hover {
+        background: darkcyan;
+      }
+      width: 200px;
+      height: 50px;
+      background: whitesmoke;
+      margin-left: 20px;
+      border: 2px solid lightskyblue;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .btn-3 {
+      &:hover {
+        background: darkcyan;
+      }
+      width: 200px;
+      height: 50px;
+      background: lightslategrey;
+      margin-left: 20px;
+
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+.findShipments {
+  display: flex;
+  flex-wrap: nowrap;
+  background: lightblue;
+
+  .box-5 {
+    border-right: 3px solid darkblue;
+    width: 30%;
+    height: 100vh;
+  }
+  .box-6 {
+    width: 70%;
+    height: 100vh;
   }
 }
