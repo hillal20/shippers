@@ -101,6 +101,25 @@
 .join .join-box2 {
   height: 400px;
   border: 2px solid red;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+.join .join-box2 .join-box2-sh-car {
+  display: flex;
+  flex-direction: row;
+}
+.join .join-box2 .join-box2-sh-car .shipper {
+  border: 2px solid black;
+  width: 30%;
+}
+.join .join-box2 .join-box2-sh-car .carrier {
+  border: 2px solid black;
+  width: 30%;
+}
+.join .join-box2 .join-box2-sh-car .broker {
+  border: 2px solid black;
+  width: 30%;
 }
 .howItWorks {
   height: 100vh;
@@ -179,4 +198,21 @@
 .findShipments .box-6 {
   width: 70%;
   height: 100vh;
+}
+.ship .ship-nsh {
+  border: 2px solid red;
+  height: 15vh;
+}
+.ship .ship-cat {
+  border: 2px solid blue;
+  height: 80vh;
+}
+.ship .ship-cat .ship-cat-2 {
+  display: flex;
+  flex-direction: row;
+}
+.ship .ship-cat .ship-cat-2 .s {
+  border: 1px solid lightsalmon;
+  width: 33%;
+  height: 400px;
 }
