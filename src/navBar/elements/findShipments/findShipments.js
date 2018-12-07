@@ -37,6 +37,15 @@ class FindShipments extends Component {
             <div>
               <p1>Categories</p1>
               <p>All Categories</p>
+              <select
+                onChange={event => {
+                  //this.setState({ authorId: event.target.value });
+                  console.log(event.target);
+                }}
+              >
+                <option>all</option>
+                <option>2</option>
+              </select>
             </div>
             <div>
               <p2>weights</p2>
