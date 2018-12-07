@@ -82,7 +82,7 @@ class NavBar extends Component {
           //   }
           // }}
           >
-            <a href="http://localhost:3000"> SHIPPERS</a>
+            <a href="http://localhost:3000">SHIPPERS</a>
           </span>
         </div>
         {this.state.howItWorks && (
