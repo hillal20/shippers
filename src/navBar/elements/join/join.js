@@ -9,11 +9,15 @@ class Join extends Component {
       email: "",
       username: "",
       password: "",
-      rePassword: ""
+      rePassword: "",
+      click: false
     };
   }
   submitInfo = event => {
     this.setState({ [event.target.name]: event.target.value });
+  };
+  authenticate = () => {
+    this.setState({ click: !this.state.click });
   };
   render() {
     return (
@@ -24,10 +28,19 @@ class Join extends Component {
         <div className="join-box2">
           <h2> I am ...</h2>
           <div className="join-box2-sh-car">
-            <div className="shipper"> shipper </div>
-            <div className="carrier">carrier</div>
-            <div className="broker">broker</div>
+            <button className="shipper-btn" onClick={this.authenticate}>
+              {" "}
+              shipper{" "}
+            </button>
+            <button className="carrier-btn" onClick={this.authenticate}>
+              carrier
+            </button>
+            <button className="broker-btn" onClick={this.authenticate}>
+              broker
+            </button>
           </div>
+          {this.state.click && <div>facebook...</div>}
+          {this.state.click && <div>google...</div>}
         </div>
       </div>
     );

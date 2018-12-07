@@ -72,17 +72,17 @@ class NavBar extends Component {
           </div>
 
           <span
-            onClick={() => {
-              if (this.props.location.pathname === "/") {
-                return false;
-              } else {
-                this.updateNavBar();
-                this.props.history.push("/");
-                this.props.shippersClick();
-              }
-            }}
+          // onClick={() => {
+          //   if (this.props.location.pathname === "/") {
+          //     return false;
+          //   } else {
+          //     this.updateNavBar();
+          //     this.props.history.push("/");
+          //     this.props.shippersClick();
+          //   }
+          // }}
           >
-            SHIPPERS
+            <a href="http://localhost:3000"> SHIPPERS</a>
           </span>
         </div>
         {this.state.howItWorks && (
