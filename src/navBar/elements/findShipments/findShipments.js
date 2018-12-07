@@ -35,16 +35,17 @@ class FindShipments extends Component {
           />
           <div className="categories">
             <div>
-              <p1>Categories</p1>
+              <p>Categories</p>
               <p>All Categories</p>
               <select
                 onChange={event => {
                   //this.setState({ authorId: event.target.value });
-                  console.log(event.target);
+                  console.log(event.target.value);
                 }}
               >
-                <option>all</option>
+                <option value="7">all</option>
                 <option>2</option>
+                <option>3</option>
               </select>
             </div>
             <div>
