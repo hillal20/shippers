@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../../navBar.js";
+import Payment from "../../../stripe/stripApp.js";
 class Join extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +43,7 @@ class Join extends Component {
           {this.state.click && <div>facebook...</div>}
           {this.state.click && <div>google...</div>}
         </div>
+        <Payment />
       </div>
     );
   }
