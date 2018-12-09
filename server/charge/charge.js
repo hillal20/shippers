@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const stripe = require("stripe")("sk_test_4uTrPeq8JDUTDumv8qDek87x");
 
-router.post("/:userID", (req, res) => {
+router.post("/", (req, res) => {
   const { userID } = req.params;
   const { name, email, amount, id, token } = req.body;
   console.log("====>", email);
@@ -14,16 +14,20 @@ router.post("/:userID", (req, res) => {
   stripe.customers
     .create({ email: email, source: token })
     .then(customer => {
-      stripe.charges.create({
-        amount,
-        description: name,
-        currency: "usd",
-        customer: customer.id
-      });
+      stripe.charges
+        .create({
+          amount: 200,
+          description: name,
+          currency: "usd",
+          customer: customer.id
+        })
+        .then(charge => {
+          console.log(charge);
+          res.send("successfully");
+        })
+        .catch(err => res.send(err));
     })
-    .then(charge => {
-      res.send("successfully");
-    })
+
     .catch(err => res.send(err));
 });
 
