@@ -22,7 +22,7 @@ class CheckoutForm extends Component {
           token: token.token.id,
           email: token.token.email
         };
-        let response = axios.post("http://localhost:4002/api", object);
+        let response = axios.post("http://localhost:4444/charge", object);
         response
           .then(res => {
             console.log(res);
@@ -38,7 +38,6 @@ class CheckoutForm extends Component {
       <div className="checkout">
         <p>Would you like to complete the purchase?</p>
         <CardElement />
-
         <button onClick={this.submit}>Send</button>
       </div>
     );

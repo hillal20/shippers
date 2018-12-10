@@ -68,7 +68,10 @@ class FindShipments extends Component {
         </div>
         <div className="box-6">
           {" "}
-          <h1>bx2</h1>
+          <h1>
+            bx2
+            <h3> LIST OF SHIPMENTS </h3>
+          </h1>
         </div>
       </div>
     );
