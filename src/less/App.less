@@ -99,20 +99,18 @@
 .join {
   //border: 8px solid blue;
   width: 60vw;
-  height: 50vh;
+  height: 55vh;
   background: rgb(223, 177, 184);
   display: flex;
   flex-direction: column;
   margin-left: 20vw;
   margin-top: 10vh;
   .join-box1 {
-    //border: 2px solid green;
+    border: 2px solid green;
     height: 60%;
   }
   .join-box2 {
-    height: 100%;
-    // border: 2px solid red;
-    display: flex;
+    border: 2px solid red;
     align-content: center;
     flex-direction: column;
     .join-box2-sh-car {
@@ -123,6 +121,7 @@
         border: 2px solid black;
         width: 30%;
         height: 60px;
+
         font-size: 20px;
         &:hover {
           background: lightblue;
@@ -131,6 +130,7 @@
       .carrier-btn {
         border: 2px solid black;
         width: 30%;
+        height: 60px;
         font-size: 20px;
         &:hover {
           background: lightblue;
@@ -139,11 +139,16 @@
       .broker-btn {
         border: 2px solid black;
         width: 30%;
+        height: 60px;
         font-size: 20px;
         &:hover {
           background: lightblue;
         }
       }
+    }
+
+    .join-box2-facebook-email {
+      background: fuchsia;
     }
   }
 } // join

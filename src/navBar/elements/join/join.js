@@ -18,7 +18,7 @@ class Join extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
   authenticate = () => {
-    this.setState({ click: !this.state.click });
+    this.setState({ click: true });
   };
   render() {
     return (
@@ -30,8 +30,7 @@ class Join extends Component {
           <h2> I am ...</h2>
           <div className="join-box2-sh-car">
             <button className="shipper-btn" onClick={this.authenticate}>
-              {" "}
-              shipper{" "}
+              shipper
             </button>
             <button className="carrier-btn" onClick={this.authenticate}>
               carrier
@@ -40,8 +39,14 @@ class Join extends Component {
               broker
             </button>
           </div>
-          {this.state.click && <div>facebook...</div>}
-          {this.state.click && <div>google...</div>}
+          <div className="hidden-fb-em">
+            {this.state.click && (
+              <div className="join-box2-facebook-email">
+                <div> facebook...</div>
+                <div> google...</div>
+              </div>
+            )}
+          </div>
         </div>
         <Payment />
       </div>
