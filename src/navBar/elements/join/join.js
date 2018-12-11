@@ -11,7 +11,8 @@ class Join extends Component {
       username: "",
       password: "",
       rePassword: "",
-      click: false
+      click: false,
+      emailClick: false
     };
   }
   submitInfo = event => {
@@ -19,6 +20,9 @@ class Join extends Component {
   };
   authenticate = () => {
     this.setState({ click: true });
+  };
+  emailClick = () => {
+    this.setState({ emailClick: true });
   };
   render() {
     return (
@@ -43,7 +47,8 @@ class Join extends Component {
             {this.state.click && (
               <div className="join-box2-facebook-email">
                 <div> facebook...</div>
-                <div> google...</div>
+                <div onClick={this.emailClick}> email...</div>
+                {this.state.emailClick && <div> ...input</div>}
               </div>
             )}
           </div>
