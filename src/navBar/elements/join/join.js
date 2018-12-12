@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import NavBar from "../../navBar.js";
 import Payment from "../../../stripe/stripApp.js";
+import FBimage from "../../../pictures/facebook.jpg";
+import GMimage from "../../../pictures/gmail.jpg";
 class Join extends Component {
   constructor(props) {
     super(props);
@@ -46,8 +48,13 @@ class Join extends Component {
           <div className="hidden-fb-em">
             {this.state.click && (
               <div className="join-box2-facebook-email">
-                <div> facebook...</div>
-                <div onClick={this.emailClick}> email...</div>
+                <img src={FBimage} height="50px" width="100px" />
+                <img
+                  src={GMimage}
+                  height="50px"
+                  width="100px"
+                  onClick={this.emailClick}
+                />
                 {this.state.emailClick && <div> ...input</div>}
               </div>
             )}

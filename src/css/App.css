@@ -136,6 +136,10 @@
 }
 .join .join-box2 .join-box2-facebook-email {
   background: fuchsia;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .howItWorks {
   height: 100vh;
