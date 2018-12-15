@@ -14,7 +14,9 @@ class Join extends Component {
       password: "",
       rePassword: "",
       click: false,
-      emailClick: false
+      emailClick: false,
+      personal: false,
+      business: false
     };
   }
   submitInfo = event => {
@@ -48,16 +50,95 @@ class Join extends Component {
           <div className="hidden-fb-em">
             {this.state.click && (
               <div className="join-box2-facebook-email">
-                <a href="http://localhost:4444/facebook">
-                  <img src={FBimage} height="50px" width="100px" />
-                </a>
+                <img
+                  src={FBimage}
+                  height="50px"
+                  width="100px"
+                  onClick={() => {
+                    window.open(
+                      "http://localhost:4444/facebook",
+                      "_blank",
+                      `toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,
+                        width=1200,height=800`
+                    );
+                  }}
+                />
+
                 <img
                   src={GMimage}
                   height="50px"
                   width="100px"
                   onClick={this.emailClick}
                 />
-                {this.state.emailClick && <div> ...input</div>}
+                {this.state.emailClick && (
+                  <div>
+                    <p>Account Type</p>
+                    <button
+                      onClick={() => {
+                        this.setState({ personal: true, business: false });
+                      }}
+                    >
+                      Personal
+                    </button>
+                    <button
+                      onClick={() => {
+                        this.setState({ business: true });
+                      }}
+                    >
+                      Business
+                    </button>
+                    {this.state.personal && (
+                      <div>
+                        <p>First Name</p>
+                        <input
+                          type="text"
+                          name="firstName"
+                          value={this.state.firstName}
+                          onChange={this.submitInfo}
+                        />
+                        <p>Last Name</p>
+                        <input
+                          type="text"
+                          name="lastName"
+                          value={this.state.lastName}
+                          onChange={this.submitInfo}
+                        />
+                        <p>Email Address</p>
+                        <input
+                          type="text"
+                          name="email"
+                          value={this.state.email}
+                          onChange={this.submitInfo}
+                        />
+                        <p>Create Password</p>
+                        <input
+                          type="text"
+                          name="password"
+                          value={this.state.password}
+                          onChange={this.submitInfo}
+                        />
+                        <p>User Name </p>
+                        <input
+                          type="text"
+                          name="username"
+                          value={this.state.username}
+                          onChange={this.submitInfo}
+                        />
+                        {this.state.business && (
+                          <div>
+                            <p>Company Name</p>
+                            <input
+                              type="text"
+                              name="companyName"
+                              value={this.state.companyName}
+                              onChange={this.submitInfo}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>
