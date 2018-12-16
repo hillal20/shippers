@@ -3,8 +3,8 @@ import Navbar from "../../navBar.js";
 import SmallBox from "../../../pictures/smallBox.jpg";
 import CarryOn from "../../../pictures/carryOn.jpg";
 import Luggage from "../../../pictures/luggage.jpg";
-import CArryOn from "../../../forms/carryOn.js";
-import { Route, Link, withRouter } from "react-router-dom";
+import CAOn from "../../../forms/carryOn.js";
+import { Route, Link, NavLink, withRouter, Switch } from "react-router-dom";
 class Ship extends Component {
   constructor(props) {
     super(props);
@@ -23,28 +23,39 @@ class Ship extends Component {
           </div>
           <div className="ship-cat-2">
             <div className="s">
-              <img src={SmallBox} width="400" height="400" />
+              <img
+                src={SmallBox}
+                width="400"
+                height="400"
+                onClick={() => {
+                  this.props.history.push("/ship/smallBox");
+                }}
+              />
             </div>
             <div className="s">
-              <Link to="carry">
-                <img
-                  src={CarryOn}
-                  width="400"
-                  height="400"
-                  // onClick={() => {
-                  //   this.props.history.push("/carry");
-                  // }}
-                />
-              </Link>
+              <img
+                src={CarryOn}
+                width="400"
+                height="400"
+                onClick={() => {
+                  this.props.history.push("/ship/carry");
+                }}
+              />
             </div>
             <div className="s">
-              <img src={Luggage} width="300" height="300" />
+              <img
+                src={Luggage}
+                width="300"
+                height="300"
+                onClick={() => {
+                  this.props.history.push("/ship/luggage");
+                }}
+              />
             </div>
           </div>
         </div>
-        <Route exact path="/carry" Component={CArryOn} />
       </div>
     );
   }
 }
-export default Ship;
+export default withRouter(Ship);

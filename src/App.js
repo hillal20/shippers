@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import NavBar from "./navBar/navBar.js";
 import "./css/App.css";
 import SideBar from "./sideBar/sideBar.js";
-import { Route, Link, withRouter } from "react-router-dom";
+import { Route, Link, Switch, withRouter } from "react-router-dom";
 import HowItWoks from "./navBar/elements/howItWorks/howItWorks.js";
 import Join from "./navBar/elements/join/join.js";
 import Help from "./navBar/elements/help/help.js";
@@ -15,7 +15,9 @@ import Navbar from "./navBar/navBar.js";
 import LandingPage from "./landingPage/landingPage.js";
 import { connect } from "react-redux";
 import { HOW_IT_WORKS } from "./navBar/navBar.js";
-import CArryOn from "./forms/carryOn.js";
+import CAOn from "./forms/carryOn.js";
+import Luggage from "./forms/luggage.js";
+import SmallBox from "./forms/smallBox.js";
 class App extends Component {
   render() {
     console.log("HOW_IT_WORKS", HOW_IT_WORKS);
@@ -31,8 +33,9 @@ class App extends Component {
         <Route exact path="/join" component={Join} />
         <Route exact path="/help" component={Help} />
         <Route exact path="/shippers" component={Shippers} />
-        <Route path="/carry" Component={CArryOn} />
-        <CArryOn />
+        <Route exact path="/ship/carry" component={CAOn} />
+        <Route exact path="/ship/luggage" component={Luggage} />
+        <Route exact path="/ship/smallBox" component={SmallBox} />
       </div>
     );
   }
@@ -42,4 +45,4 @@ const mPTS = state => {
   return {};
 };
 
-export default App;
+export default withRouter(App);
