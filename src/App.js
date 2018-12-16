@@ -15,6 +15,7 @@ import Navbar from "./navBar/navBar.js";
 import LandingPage from "./landingPage/landingPage.js";
 import { connect } from "react-redux";
 import { HOW_IT_WORKS } from "./navBar/navBar.js";
+import CArryOn from "./forms/carryOn.js";
 class App extends Component {
   render() {
     console.log("HOW_IT_WORKS", HOW_IT_WORKS);
@@ -30,6 +31,8 @@ class App extends Component {
         <Route exact path="/join" component={Join} />
         <Route exact path="/help" component={Help} />
         <Route exact path="/shippers" component={Shippers} />
+        <Route path="/carry" Component={CArryOn} />
+        <CArryOn />
       </div>
     );
   }

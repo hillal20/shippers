@@ -135,6 +135,13 @@ class Join extends Component {
                             />
                           </div>
                         )}
+                        <button
+                          onClick={() => {
+                            alert("joined");
+                          }}
+                        >
+                          JOIN SHIPPERS
+                        </button>
                       </div>
                     )}
                   </div>
